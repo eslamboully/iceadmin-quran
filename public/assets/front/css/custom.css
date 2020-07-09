@@ -1,0 +1,129 @@
+/*Fonts*/
+@font-face {
+    font-family: 'DIN-NEXT-BOLD';
+    src: url(../fonts/DIN-NEXT-BOLD.otf);
+}
+@font-face {
+    font-family: 'DIN-NEXT-MEDIUM';
+    src: url(../fonts/DIN-NEXT-MEDIUM.otf);
+}
+@font-face {
+    font-family: 'DIN-NEXT-REGULAR';
+    src: url(../fonts/DIN-NEXT-REGULAR.otf);
+}
+
+body, a, p,
+.scl1 > span,
+nav > div ul li,
+.sec-tl > span,
+.plr-bx > span,
+ul li, ol li,
+.post-inf > a,
+.event-bx > a,
+.dnt-frm input,
+.widget > span{
+    font-family: 'DIN-NEXT-REGULAR';
+}
+h1, h2, h3, h4, h5, h6{
+    font-family: 'DIN-NEXT-BOLD';   
+}
+.theme-btn,
+.prayer-timings > table th,
+.prayer-timings > table td span{
+    font-family: 'DIN-NEXT-MEDIUM';   
+}
+
+.rev_slider .caption, .rev_slider .tp-caption{
+    line-height: 38px!important;
+    font-size: 25px!important;
+    font-family: 'DIN-NEXT-MEDIUM'!important;   
+}
+.rev_slider .rev-btn{
+    line-height: 27px!important;
+    font-size: 20px!important;
+}
+
+.modal-content{
+    padding: 30px 20px;
+}
+.modal-content .modal-header{
+    display: block;
+    text-align: center;
+	color: #323232;
+    border: none;
+    margin-bottom: 10px;
+}
+.modal-content .modal-header .modal-title{
+	font-family: "DIN-NEXT-BOLD";
+}
+.modal .close{
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    color: #8c8b8b;
+    font-size: 2rem;
+    font-weight: 100;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.modal-content .form-control{
+    height: 50px;
+    border: none;
+    border-bottom: 1px solid #c5c5c5;
+}
+.modal-content .modal-footer{
+    border: none;
+}
+.modal-content .modal-footer .btn{
+    padding: 10px;
+	margin: 0;
+	width: 45%!important;
+	margin: 0 auto;
+    font-size: 20px;
+    font-family: "DIN-NEXT-BOLD";
+}
+.modal-content .modal-footer .btn:hover{
+    color: #fff;
+    -webkit-transition: all 0.5s ease-in-out;
+       -moz-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+}
+
+
+header.style1 .logo-menu-sec {
+    background: rgba(0, 0, 0, 0.2);
+}
+header.style1 nav{
+    margin-top: 33px;
+}
+
+nav > div > ul > li{
+    margin: 0 12px;
+}
+.mega-menu{
+    width: 800px;
+}
+.mega-menu > li{
+    width: 20%;
+    display: inline-block;
+}
+nav > div ul ul.mega-menu li a{
+    padding: 7px 10px;
+}
+nav > div ul li a > img{
+    width: 40px;
+    height: 30px;
+    display: block;
+    margin: auto;
+}
+nav > div ul li.menu-item-has-children > i{
+    bottom: 0;
+}
+
+.abt-desc > p{
+    direction: rtl;
+}
+.newsletter-wrp h4 {
+    font-size: 22px;
+}

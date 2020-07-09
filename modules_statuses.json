@@ -1,0 +1,16 @@
+{
+    "UserModule": true,
+    "AdminModule": true,
+    "BlogModule": true,
+    "VideoModule": true,
+    "CommonModule": true,
+    "ConfigModule": true,
+    "PhotoAlbumModule": true,
+    "PortfolioModule": true,
+    "ProductModule": true,
+    "ServiceModule": true,
+    "WidgetsModule": true,
+    "TripModule": true,
+    "FrontModule": true,
+    "SolutionModule": true
+}

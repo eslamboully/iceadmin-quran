@@ -1,0 +1,33 @@
+<?php
+
+return array(
+
+  'pagetitle' => 'Products',
+  'homepage' => 'Home Page',
+  'addnew' => 'Add New',
+  'id' => 'ID',
+  'product' => 'Product',
+  'photo' => 'Photo',
+  'operation' => 'Operations',
+  'title' => 'Title',
+  'price' => 'Price',
+  'categs' => 'Choose Category or more',
+  'desc' => 'Description',
+  'album' => 'Upload Album',
+  'mt' => 'Meta Title',
+  'md' => 'Meta Desc',
+  'tags' => 'Tags',
+  'cancel' => 'Cancel',
+  'submit' => 'Submit',
+  'volume' => 'Volume',
+  'measure' => 'Measure',
+  'num_of_item' => 'Number of items',
+  'item_cost' => 'Item Cost',
+  'quantity' => 'quantity',
+  'overview' => 'overview',
+  'tech_specs' => 'tech_specs',
+  'accessories' => 'accessories',
+    'other_files' => 'upload documentation',
+    'file_uploads' => 'Click here to upload files or drag and drop files here',
+    'delete' => 'delete',
+);

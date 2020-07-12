@@ -25,22 +25,22 @@
                     <h2 itemprop="headline">@lang('front.contact')</h2>
                 </div>
                 <div class="cnt-frm text-center">
-                    <form>
+                    <form action="#" method="post">
                         <div class="row mrg10">
                             <div class="col-md-4 col-sm-6 col-lg-4">
-                                <input class="brd-rd5" type="text" placeholder="@lang('front.name')">
+                                <input class="brd-rd5" type="text" name="name" placeholder="@lang('front.name')">
                             </div>
                             <div class="col-md-4 col-sm-6 col-lg-4">
-                                <input class="brd-rd5" type="email" placeholder="@lang('front.email')">
+                                <input class="brd-rd5" type="email" name="email" placeholder="@lang('front.email')">
                             </div>
                             <div class="col-md-4 col-sm-12 col-lg-4">
-                                <input class="brd-rd5" type="text" placeholder="@lang('front.phone')">
+                                <input class="brd-rd5" type="text" name="phone" placeholder="@lang('front.phone')">
                             </div>
                             <div class="col-md-12 col-sm-12 col-lg-12">
-                                <textarea class="brd-rd5" placeholder="@lang('front.message')"></textarea>
+                                <textarea class="brd-rd5" name="message" placeholder="@lang('front.message')"></textarea>
                             </div>
                             <div class="col-md-12 col-sm-12 col-lg-12">
-                                <button type="submit" class="theme-btn theme-bg brd-rd5">@lang('front.sent')</button>
+                                <button type="submit" class="theme-btn theme-bg brd-rd5 contact-buttom">@lang('front.sent')</button>
                             </div>
                         </div>
                     </form>
@@ -68,3 +68,43 @@
         </div>
     </section>
 @endsection
+
+@push('javascript')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+    <script>
+        $('.contact-buttom').on('click',(e) => {
+
+            e.preventDefault();
+            let _token = '{{ csrf_token() }}',
+                name  = $('input[name=name]').val(),
+                email = $('input[name=email]').val(),
+                phone = $('input[name=phone]').val(),
+                message = $('textarea[name=message]').val();
+
+            $.ajax({
+                url : '{{ route('front.contact.post') }}',
+                method: 'POST',
+                data : {_token:_token,name:name,email:email,phone:phone,message:message},
+
+                success: function (data) {
+                    if(data.status == false) {
+                        Swal.fire(
+                            '@lang("front.failed_message")',
+                            data.message,
+                            'error'
+                        )
+                    }else{
+                        Swal.fire(
+                            '@lang("front.success_message")',
+                            '@lang("front.success")',
+                            'success'
+                        )
+                        setTimeout(window.location.href = '{{ route('front.index') }}',2000);
+                    }
+                }
+            });
+        });
+
+    </script>
+@endpush

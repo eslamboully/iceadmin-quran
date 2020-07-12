@@ -5,14 +5,17 @@ namespace Modules\FrontModule\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Validator;
 use Modules\ConfigModule\Entities\Config;
 use Illuminate\Support\Facades\View;
 use Modules\BlogModule\Entities\Blog;
 use Modules\ServiceModule\Entities\ServiceCategory\ServiceCategory;
+use Modules\ServiceModule\Entities\ServiceMod\Service;
 use Modules\TripModule\Entities\Destination;
 use Modules\TripModule\Entities\Trip;
 use Modules\VideoModule\Entities\Video;
 use Modules\WidgetsModule\Entities\acheive;
+use Modules\WidgetsModule\Entities\Contactus;
 use Modules\WidgetsModule\Entities\OurWay;
 use Modules\WidgetsModule\Entities\Partner;
 use Modules\WidgetsModule\Entities\Slider\Slider;
@@ -81,9 +84,16 @@ class FrontModuleController extends Controller
      * @param int $id
      * @return Response
      */
-    public function edit($id)
+    public function questions()
     {
-        return view('frontmodule::edit');
+        $questions = acheive::query()->paginate(9);
+        return view('frontmodule::questions',compact('questions'));
+    }
+
+    public function question($id,$title)
+    {
+        $question = acheive::find($id);
+        return view('frontmodule::question',compact('question'));
     }
 
     /**
@@ -92,9 +102,16 @@ class FrontModuleController extends Controller
      * @param int $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function shares()
     {
-        //
+        $shares = Testimonial::query()->paginate(9);
+        return view('frontmodule::shares',compact('shares'));
+    }
+
+    public function share($id,$title)
+    {
+        $share = Testimonial::find($id);
+        return view('frontmodule::share',compact('share'));
     }
 
     /**
@@ -102,8 +119,27 @@ class FrontModuleController extends Controller
      * @param int $id
      * @return Response
      */
-    public function destroy($id)
+    public function contact_post(Request $request)
     {
-        //
+        $validate = Validator::make($request->all(),[
+            'name' => 'required',
+            'email' => 'required',
+            'phone' => 'required',
+            'message' => 'required',
+        ],[],[]);
+
+        if ($validate->fails()) {
+            return \response()->json(['data' => '','message' => $validate->errors()->first(),'status' => false]);
+        }
+        $contact = Contactus::create($request->except('_token'));
+        return \response()->json(['data' => $contact,'message' => '','status' => true]);
+    }
+
+    public function service($id,$title)
+    {
+        $service = Service::find($id);
+        $services = Service::query()->get();
+        $recent_blogs = Blog::with(['translations','admin'])->skip(2)->take(2)->get();
+        return view('frontmodule::service',compact('service','services','recent_blogs'));
     }
 }

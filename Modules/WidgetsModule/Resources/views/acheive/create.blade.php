@@ -1,7 +1,7 @@
 @extends('commonmodule::layouts.master')
 
 @section('title')
-  {{ __('widgetsmodule::widgets.acheivepagetitle') }}
+    Questions And Answer
 @endsection
 
 @section('css')
@@ -11,7 +11,7 @@
 
 @section('content-header')
 <section class="content-header">
-    <h1> {{__('widgetsmodule::widgets.acheivepagetitle')}} </h1>
+    <h1> Questions And Answer </h1>
 </section>
 @endsection
 
@@ -51,7 +51,7 @@
               <div class="tab-pane @if($loop->first) active @endif" id="{{ $lang->display_lang }}">
                 <div class="form-group">
                   {{-- title --}}
-                  <label class="control-label col-sm-2" for="title">{{__('widgetsmodule::widgets.title')}} ({{ $lang->display_lang }}):</label>
+                  <label class="control-label col-sm-2" for="title">Question ({{ $lang->display_lang }}):</label>
                   <div class="col-sm-8">
                     <input data-validation="length alphanumeric" data-validation-length="min4" type="text" autocomplete="off" class="form-control"
                      name="{{$lang->lang}}[title]" data-validation="alphanumeric" @if ($loop->first) required @endif>
@@ -60,7 +60,7 @@
 
                 <div class="form-group">
                   {{-- content --}}
-                  <label class="control-label col-sm-2" for="title">{{__('widgetsmodule::widgets.content')}} ({{$lang->display_lang}}):</label>
+                  <label class="control-label col-sm-2" for="title">Answer ({{$lang->display_lang}}):</label>
                   <div class="col-sm-8">
                     <textarea id="editor{{$lang->id}}" name="{{$lang->lang}}[content]" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                   </div>
@@ -70,7 +70,7 @@
 
                   <div class="form-group">
                       {{-- Description --}}
-                      <label class="control-label col-sm-2" for="title">{{__('widgetsmodule::widgets.number')}} ({{$lang->display_lang}}):</label>
+                      <label class="control-label col-sm-2" for="title">Views ({{$lang->display_lang}}):</label>
                       <div class="col-sm-8">
                           <input data-validation="length alphanumeric" data-validation-length="min4" type="text" autocomplete="off" class="form-control"
                                  name="number" data-validation="alphanumeric" required >

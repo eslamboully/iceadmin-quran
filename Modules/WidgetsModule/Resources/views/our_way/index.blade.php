@@ -10,7 +10,7 @@
 
 @section('content-header')
 <section class="content-header">
-    <h1> {{__('widgetsmodule::widgets.our_way')}} </h1>
+    <h1> Home Services </h1>
 </section>
 @endsection
 

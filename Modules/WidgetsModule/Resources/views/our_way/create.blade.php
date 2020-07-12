@@ -11,7 +11,7 @@
 
 @section('content-header')
 <section class="content-header">
-    <h1> {{__('widgetsmodule::widgets.our_way')}} </h1>
+    <h1> Home Services </h1>
 
 </section>
 @endsection
@@ -21,7 +21,7 @@
   <!-- Horizontal Form -->
   <div class="box box-info">
     <div class="box-header with-border">
-      <h3 class="box-title">{{__('widgetsmodule::widgets.our_way')}}</h3>
+      <h3 class="box-title">Home Services</h3>
     </div>
     @if (count($errors) > 0)
       @foreach ($errors->all() as $item)

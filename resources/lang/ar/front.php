@@ -47,4 +47,12 @@ return [
     'more_details' => 'معلومات الاتصال',
     'phone' => 'رقم الهاتف',
     'address' => 'العنوان',
+    'questions_more' => 'رؤية التفاصيل',
+    'shares' => 'خواطركم ومشاركاتكم',
+    'success_message' => 'تم بنجاح',
+    'failed_message' => 'خطأ',
+    'success' => 'ارسلت رسالتك بنجاح سنتواصل معك قريبا',
+    'question' => 'اسألة',
+    'services' => 'الخدمات',
+    'other_service' => 'خدمات اخري',
 ];

@@ -6,7 +6,7 @@
 
 @section('content-header')
 <section class="content-header">
-  <h1> {{__('widgetsmodule::widgets.monialpagetitle')}} </h1>
+  <h1> Your Shares </h1>
 
 </section>
 @endsection
@@ -16,7 +16,7 @@
   <!-- Horizontal Form -->
   <div class="box box-info">
     <div class="box-header with-border">
-      <h3 class="box-title">{{__('widgetsmodule::widgets.monialpagetitle')}}</h3>
+      <h3 class="box-title">Your Shares</h3>
     </div>
     @if (count($errors) > 0)
       @foreach ($errors->all() as $item)
@@ -42,7 +42,7 @@
 
           <div class="form-group">
             {{-- Job Title --}}
-            <label class="control-label col-sm-2" for="title">{{__('widgetsmodule::widgets.job_title')}} :</label>
+            <label class="control-label col-sm-2" for="title">Title :</label>
             <div class="col-sm-8">
               <input type="text" autocomplete="off" class="form-control" name="job_title" value="{{$monial->job_title}}" required>
             </div>

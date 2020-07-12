@@ -7,10 +7,10 @@
             <div class="container">
                 <div class="pg-tp-wrp text-center">
                     <div class="pg-tp-inr">
-                        <h1 itemprop="headline">@lang('front.religious_links')</h1>
+                        <h1 itemprop="headline">{{ $service->title }}</h1>
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('front.index') }}" title="" itemprop="url">@lang('front.home')</a></li>
-                            <li class="breadcrumb-item active">@lang('front.religious_links')</li>
+                            <li class="breadcrumb-item"><a href="" title="" itemprop="url">@lang('front.home')</a></li>
+                            <li class="breadcrumb-item active">{{ $service->title }}</li>
                         </ol>
                     </div>
                 </div><!-- Page Top Wrap -->
@@ -24,20 +24,17 @@
                     <div class="row">
                         <div class="col-md-9 col-sm-12 col-lg-9">
                             <div class="service-detail-desc">
-                                <img src="{{ url('images/config/'.$config['religious_links_photo']) }}" alt="service-detail-img1.jpg" itemprop="image">
-                                <p itemprop="description">{!! $config['religious_links'] !!}</p>
+                                <p itemprop="description">{!! $service->description !!}</p>
                             </div>
                         </div>
                         <div class="col-md-3 col-sm-6 col-lg-3">
                             <div class="sidebar-wrp">
                                 <div class="widget">
-                                    <h5 itemprop="headline">@lang('front.other_pages')</h5>
+                                    <h5 itemprop="headline">@lang('front.other_service')</h5>
                                     <ul class="cat-lst">
-{{--                                        <li><a href="#" title="" itemprop="url">@lang('front.relegion_link')</a></li>--}}
-                                        <li><a href="{{ route('front.shares') }}" title="" itemprop="url">@lang('front.your_share')</a></li>
-                                        <li><a href="{{ route('front.questions') }}" title="" itemprop="url">@lang('front.questions')</a></li>
-                                        <li><a href="{{ route('front.about_us') }}" title="" itemprop="url">@lang('front.about_us')</a></li>
-                                        <li><a href="{{ route('front.contact') }}" title="" itemprop="url">@lang('front.contact')</a></li>
+                                        @foreach($services as $serv)
+                                            <li><a href="{{ route('front.service',['id' => $serv->id,'title' => str_replace(' ','-',$serv->title)]) }}" title="" itemprop="url">{{ $serv->title }}</a></li>
+                                        @endforeach
                                     </ul>
                                 </div>
                                 <div class="widget">
@@ -54,7 +51,7 @@
                             </div><!-- Sidebar Wrap -->
                         </div>
                     </div>
-                </div><!-- تفاصيل الخدمة Wrap -->
+                </div><!-- Service Detail Wrap -->
             </div>
         </div>
     </section>

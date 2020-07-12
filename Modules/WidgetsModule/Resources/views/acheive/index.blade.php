@@ -10,7 +10,7 @@
 
 @section('content-header')
     <section class="content-header">
-        <h1> {{__('widgetsmodule::widgets.acheivepagetitle')}} </h1>
+        <h1> Questions And Answer </h1>
 
     </section>
 @endsection
@@ -21,7 +21,7 @@
         <div class="col-xs-12">
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">{{__('widgetsmodule::widgets.acheivepagetitle')}}</h3>
+                    <h3 class="box-title">Questions And Answer</h3>
                     {{-- Add New --}}
                     <a href="{{url('admin-panel/widgets/acheive/create')}}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp; {{__('widgetsmodule::widgets.addnew')}}</a>
                 </div>
@@ -30,9 +30,9 @@
                     <table id="SlidersIndex" class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>{{__('widgetsmodule::widgets.number')}}</th>
-                                <th>{{__('widgetsmodule::widgets.title')}}</th>
-                                <th>{{__('widgetsmodule::widgets.content')}}</th>
+                                <th>Views</th>
+                                <th>Questions</th>
+                                <th>Answers</th>
                                 <th>{{__('widgetsmodule::widgets.icon')}}</th>
                                 <th>{{__('widgetsmodule::widgets.operation')}}</th>
                             </tr>

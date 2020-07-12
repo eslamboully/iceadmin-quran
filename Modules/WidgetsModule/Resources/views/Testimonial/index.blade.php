@@ -10,7 +10,7 @@
 
 @section('content-header')
     <section class="content-header">
-        <h1> {{__('widgetsmodule::widgets.monialpagetitle')}} </h1>
+        <h1> Your Shares </h1>
     </section>
 @endsection
 
@@ -20,7 +20,7 @@
         <div class="col-xs-12">
             <div class="box box-info">
                 <div class="box-header with-border">
-                    <h3 class="box-title">{{__('widgetsmodule::widgets.monialpagetitle')}}</h3>
+                    <h3 class="box-title">Your Shares</h3>
                     {{-- Add New --}}
                     <a href="{{url('admin-panel/widgets/testimonials/create')}}" type="button" class="btn btn-success pull-right"><i class="fa fa-plus" aria-hidden="true"></i> &nbsp; {{__('widgetsmodule::widgets.addnew')}}</a>
                 </div>
@@ -31,7 +31,7 @@
                             <tr>
                                 <th>{{__('widgetsmodule::widgets.id')}}</th>
                                 <th>{{__('widgetsmodule::widgets.name')}}</th>
-                                <th>{{__('widgetsmodule::widgets.job_title')}}</th>
+                                <th>Title</th>
                                 <th>{{__('widgetsmodule::widgets.photo')}}</th>
                                 <th>{{__('widgetsmodule::widgets.quote')}}</th>
                                 <th>{{__('widgetsmodule::widgets.operation')}}</th>

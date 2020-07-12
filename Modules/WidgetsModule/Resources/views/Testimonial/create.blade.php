@@ -1,7 +1,7 @@
 @extends('commonmodule::layouts.master')
 
 @section('title')
- {{__('widgetsmodule::widgets.monialpagetitle')}}
+ Your Shares
 @endsection
 
 @section('css')
@@ -11,7 +11,7 @@
 
 @section('content-header')
 <section class="content-header">
-  <h1> {{__('widgetsmodule::widgets.monialpagetitle')}} </h1>
+  <h1> Your Shares </h1>
 
 </section>
 @endsection
@@ -46,7 +46,7 @@
 
           <div class="form-group">
             {{-- Job Title --}}
-            <label class="control-label col-sm-2" for="title">{{__('widgetsmodule::widgets.job_title')}} :</label>
+            <label class="control-label col-sm-2" for="title">>Title :</label>
             <div class="col-sm-8">
               <input type="text" autocomplete="off" class="form-control" name="job_title" required>
             </div>

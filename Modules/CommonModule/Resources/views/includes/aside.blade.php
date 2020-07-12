@@ -163,12 +163,12 @@
                         </li>
                 @endif
                     <li><a href="{{ url('admin-panel/widgets/our_ways') }}"><i
-                                class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.our_ways')}}</a>
+                                class="fa fa-circle-o"></i> Home Services</a>
                     </li>
                 @if(in_array('slider_app',$activeApps))
                 <!-- acheive -->
                     <li><a href="{{ url('admin-panel/widgets/acheive') }}"><i
-                                    class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.acheive')}}</a>
+                                    class="fa fa-circle-o"></i> Questions And Answer</a>
                     </li>
             @endif
                 @if(in_array('bookings_app',$activeApps))
@@ -189,7 +189,7 @@
 
                     <!-- Testimonial -->
                         <li><a href="{{ url('admin-panel/widgets/testimonials') }}"><i
-                                        class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.monial')}}</a></li>
+                                        class="fa fa-circle-o"></i> Your Shares</a></li>
                 @endif
 {{--                @if(in_array('team_app',$activeApps))--}}
 

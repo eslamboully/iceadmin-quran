@@ -26,6 +26,8 @@
     <!-- Revolution Style -->
     <link rel="stylesheet" href="{{ url('') }}/assets/front/css/revolution/settings.css">
     <link rel="stylesheet" href="{{ url('') }}/assets/front/css/revolution/navigation.css">
+
+    @stack('css')
 </head>
 <body itemscope>
 <div class="preloader">
@@ -114,7 +116,7 @@
                                         <ul>
                                             @foreach($category->service()->get() as $service)
                                             <li>
-                                                <a href="#" title="" itemprop="url">
+                                                <a href="{{ route('front.service',['id' => $service->id,'title' => str_replace(' ','-',$service->title)]) }}" title="" itemprop="url">
                                                     {{ $service->title }}
                                                 </a>
                                             </li>
@@ -129,13 +131,13 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="#" title="" itemprop="url">
+                                <a href="{{ route('front.shares') }}" title="" itemprop="url">
                                     <img src="{{ url('assets/front/images/icons/03.png') }}" alt="...">
                                     @lang('front.your_share')
                                 </a>
                             </li>
                             <li>
-                                <a href="#" title="" itemprop="url">
+                                <a href="{{ route('front.questions') }}" title="" itemprop="url">
                                     <img src="{{ url('assets/front/images/icons/01.png') }}" alt="...">
                                     @lang('front.questions')
                                 </a>
@@ -242,7 +244,7 @@
                         <ul>
                             @foreach($category->service()->get() as $service)
                                 <li>
-                                    <a href="#" title="" itemprop="url">
+                                    <a href="{{ route('front.service',['id' => $service->id,'title' => str_replace(' ','-',$service->title)]) }}" title="" itemprop="url">
                                         {{ $service->title }}
                                     </a>
                                 </li>
@@ -251,17 +253,17 @@
                     </li>
                 @endforeach
                 <li>
-                    <a href="#" title="" itemprop="url">
+                    <a href="{{ route('front.religious_link') }}" title="" itemprop="url">
                         @lang('front.relegion_link')
                     </a>
                 </li>
                 <li>
-                    <a href="#" title="" itemprop="url">
+                    <a href="{{ route('front.shares') }}" title="" itemprop="url">
                         @lang('front.your_share')
                     </a>
                 </li>
                 <li>
-                    <a href="#" title="" itemprop="url">
+                    <a href="{{ route('front.questions') }}" title="" itemprop="url">
                         @lang('front.questions')
                     </a>
                 </li>
@@ -433,5 +435,6 @@
 <script src="{{ url('') }}/assets/front/js/revolution/extensions/revolution.extension.video.min.js"></script>
 <script src="{{ url('') }}/assets/front/js/revolution/revolution-init.js"></script>
 <script src="{{ url('') }}/assets/front/js/script.js"></script>
+@stack('javascript')
 </body>
 </html>

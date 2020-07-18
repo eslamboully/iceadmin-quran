@@ -79,10 +79,22 @@
                 <input class="col-md-6" type="file"  name="cover_photo" >
                 <img style="width: 100px;height: 100px" src="{{ url('images/service/'.$category->cover_photo) }}">
             </div>
-          <!-- /.nav-tabs-custom -->
-     
 
-        
+            <div class="form-group">
+                <label class="col-md-4">@lang('servicemodule::service.main_category')</label>
+                <div class="col-md-4">
+                    <select name="parent_id" class="form-control" id="">
+                        <option value="">Parent</option>
+                        @foreach($cats as $cat)
+                            <option value="{{ $cat->id }}" {{ $category->parent_id == $cat->id ? 'selected' : '' }}>{{ $cat->title }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+          <!-- /.nav-tabs-custom -->
+
+
+
         <div class="form-group">
                             <div class="box-header">
                                 <pre><h4>SEO Columns : </h4></pre>

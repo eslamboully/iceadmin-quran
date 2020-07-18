@@ -50,26 +50,26 @@
                 </li>
             @endif
 
-            @if(in_array('project_app',$activeApps))
-                <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-briefcase"></i> <span>{{__('commonmodule::sidebar.portfolio')}}</span>
-                        <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <!-- Categories -->
-                        <li><a href="{{ url('admin-panel/portfolio/category') }}"><i
-                                        class="fa fa-circle-o"></i>{{__('commonmodule::sidebar.portfoliocateg')}}</a>
-                        </li>
+{{--            @if(in_array('project_app',$activeApps))--}}
+{{--                <li class="treeview">--}}
+{{--                    <a href="#">--}}
+{{--                        <i class="fa fa-briefcase"></i> <span>{{__('commonmodule::sidebar.portfolio')}}</span>--}}
+{{--                        <span class="pull-right-container">--}}
+{{--                        <i class="fa fa-angle-left pull-right"></i>--}}
+{{--                    </span>--}}
+{{--                    </a>--}}
+{{--                    <ul class="treeview-menu">--}}
+{{--                        <!-- Categories -->--}}
+{{--                        <li><a href="{{ url('admin-panel/portfolio/category') }}"><i--}}
+{{--                                        class="fa fa-circle-o"></i>{{__('commonmodule::sidebar.portfoliocateg')}}</a>--}}
+{{--                        </li>--}}
 
-                        <!-- projects -->
-                        <li><a href="{{ url('admin-panel/portfolio/project') }}"><i
-                                        class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.portfolio')}}</a></li>
-                    </ul>
-                </li>
-            @endif
+{{--                        <!-- projects -->--}}
+{{--                        <li><a href="{{ url('admin-panel/portfolio/project') }}"><i--}}
+{{--                                        class="fa fa-circle-o"></i> {{__('commonmodule::sidebar.portfolio')}}</a></li>--}}
+{{--                    </ul>--}}
+{{--                </li>--}}
+{{--            @endif--}}
 {{--            @if(in_array('product_app',$activeApps))--}}
 
 {{--                <li class="treeview">--}}

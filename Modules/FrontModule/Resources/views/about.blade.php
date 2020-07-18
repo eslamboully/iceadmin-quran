@@ -54,7 +54,7 @@
                     <div class="row">
                         @php $ourWaysArr = ['open-book','grave','mosque','begging'] @endphp
                         @foreach($our_ways as $index=>$my_ways)
-                            <div class="col-md-3 col-sm-6 col-lg-3">
+                            <div class="col-md-4 col-sm-6 col-lg-4">
                                 <div class="serv-bx text-center">
                                     <i class="flaticon-{{ $ourWaysArr[$index] }} theme-clr"></i>
                                     <h5 itemprop="headline"><a href="" title="" itemprop="url">{{ $my_ways->title }}</a></h5>
@@ -87,13 +87,13 @@
                                     <div class="team-thmb brd-rd5"><a href="" title="" itemprop="url"><img src="{{ url('images/team/'.$team->photo) }}" style="width: 350px;height: 484px" alt="team-img1-1.jpg" itemprop="image"></a></div>
                                     <div class="team-inf brd-rd5">
                                         <div class="scl1">
-                                            <a href="{{ $team->twitter }}" title="Twitter" itemprop="url" target="_blank"><i class="fab fa-twitter"></i></a>
-                                            <a href="{{ $team->facebook }}" title="Facebook" itemprop="url" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                            <a href="{{ $team->instagram }}" title="Instagram" itemprop="url" target="_blank"><i class="fab fa-instagram"></i></a>
-                                            <a href="{{ $team->youtube }}" title="Youtube" itemprop="url" target="_blank"><i class="fab fa-youtube"></i></a>
-                                            <a href="{{ $team->skype }}" title="skype" itemprop="url" target="_blank"><i class="fab fa-skype"></i></a>
+{{--                                            <a href="{{ $team->twitter }}" title="Twitter" itemprop="url" target="_blank"><i class="fab fa-twitter"></i></a>--}}
+{{--                                            <a href="{{ $team->facebook }}" title="Facebook" itemprop="url" target="_blank"><i class="fab fa-facebook-f"></i></a>--}}
+{{--                                            <a href="{{ $team->instagram }}" title="Instagram" itemprop="url" target="_blank"><i class="fab fa-instagram"></i></a>--}}
+{{--                                            <a href="{{ $team->youtube }}" title="Youtube" itemprop="url" target="_blank"><i class="fab fa-youtube"></i></a>--}}
+{{--                                            <a href="{{ $team->skype }}" title="skype" itemprop="url" target="_blank"><i class="fab fa-skype"></i></a>--}}
                                         </div>
-                                        <h5 itemprop="headline"><a href="" title="" itemprop="url">{{ $team->name }}</a></h5>
+                                        <h5 itemprop="headline"><a href="{{ route('front.scholar',['id' => $team->id,'title' => str_replace(' ','-',$team->name)]) }}" title="" itemprop="url">{{ $team->name }}</a></h5>
                                         <span>{{ $team->job_title }}</span>
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                     </div>
                 </div><!-- Team Sec -->
                 <div class="view-more text-center">
-                    <a class="theme-btn theme-bg brd-rd5" href="" title="" itemprop="url">@lang('front.read_more')</a>
+                    <a class="theme-btn theme-bg brd-rd5" href="{{ route('front.scientists') }}" title="" itemprop="url">@lang('front.read_more')</a>
                 </div><!-- عرض المزيد -->
             </div>
         </div>

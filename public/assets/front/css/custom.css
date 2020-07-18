@@ -21,7 +21,8 @@ ul li, ol li,
 .post-inf > a,
 .event-bx > a,
 .dnt-frm input,
-.widget > span{
+.widget > span,
+.breadcrumb > li{
     font-family: 'DIN-NEXT-REGULAR';
 }
 h1, h2, h3, h4, h5, h6{
@@ -90,9 +91,52 @@ h1, h2, h3, h4, h5, h6{
             transition: all 0.5s ease-in-out;
 }
 
-
+header.style1 .scl1 > a,
+footer .scl1 > a{
+    margin: 0 5px;
+    -webkit-transition: all 0.5s ease-in-out;
+       -moz-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+}
+header.style1 .scl1 > a:hover,
+footer .scl1 > a:hover{
+    transform: scale(1.3);
+}
+header.style1 .scl1 > a > i,
+footer .scl1 > a > i,
+.rspn-scil > li a > i{
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 3px;
+}
+.fa-twitter{
+    background: #37b1e2;
+}
+.fa-facebook-f{
+    background: #425da0;
+}
+.fa-linkedin-in{
+    background: #0678b6;
+}
+.fa-google-plus-g{
+    background: #e83f3a;
+}
+.fa-instagram{
+    background: linear-gradient(360deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+}
+.fa-youtube{
+    background: #e83f3a;
+}
 header.style1 .logo-menu-sec {
     background: rgba(0, 0, 0, 0.2);
+}
+
+.logo > a > img{
+    width: 216px;
+    height: 102px;
 }
 header.style1 nav{
     margin-top: 33px;
@@ -111,19 +155,164 @@ nav > div > ul > li{
 nav > div ul ul.mega-menu li a{
     padding: 7px 10px;
 }
+nav > div ul li a{
+    position: relative;
+}
+nav > div ul li:hover a:before{
+    display: none;
+}
 nav > div ul li a > img{
     width: 40px;
     height: 30px;
     display: block;
     margin: auto;
 }
+nav > div ul li a > img:last-child{
+    position: absolute;
+    top: 0;
+    right: calc(50% - 20px);
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-in-out;
+       -moz-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+}
+nav > div ul li:hover a > img:first-child{
+    opacity: 0;
+}
+nav > div ul li:hover a > img:last-child{
+    opacity: 1;
+    transform: scale(1.4);
+
+}
 nav > div ul li.menu-item-has-children > i{
     bottom: 0;
 }
-
+.rspn-srch > input {
+    padding: 0 40px;
+}
 .abt-desc > p{
     direction: rtl;
 }
 .newsletter-wrp h4 {
     font-size: 22px;
+}
+
+.post-bx.lst .post-thmb > a{
+    height: 206px;
+}
+.post-bx.lst .post-thmb > a > img{
+    height: 100%;
+    width: 100%;
+}
+.cmt-bx > img{
+    width: 85px;
+    height: 85px;
+}
+.rcnt-bx > a > img{
+    width: 68px;
+    height: 68px;
+}
+.newsletter-wrp h4{
+        text-align: center;
+    }
+
+@media(min-width:1031px) and (max-width:1200px){
+    .container{
+        padding: 0 15px;
+    }
+    .logo > a{
+        width: 160px;
+    }
+    .logo > a > img {
+        width: 216px;
+        height: 80px;
+    }
+    header.style1 nav{
+        margin-top: 20px;
+    }
+    nav > div > ul > li{
+        font-size: 14px;
+    }
+    .dnt-lst > a {
+        margin: 0 5px 15px 0;
+    }
+    .footer-data {
+        margin-left: 0; 
+        width: 100%;
+        padding: 70px 15px 50px;
+    }
+    
+}
+@media(max-width:1030px){
+    .rspn-srch{
+        width: 60%;
+    }
+    .rspn-scil > li a,
+    .rspn-scil > li a:hover{
+        background-color: transparent!important;
+    }
+    .lg-mn{
+        padding: 10px 20px;
+    }
+    .logo > a > img{
+        width: 141px;
+        height: 67px;
+    }
+    .rsnp-mnu > ul li.menu-item-has-children::before{
+        display: none;
+    }
+    .rsnp-mnu > ul{
+        overflow-y: hidden!important;
+        height: 100%;
+    }
+    .rsnp-mnu > ul > li{
+        text-align: right;
+    }
+    .rsnp-mnu > ul > li a{
+        position: relative;
+        display: inline-block;
+    }
+    .rsnp-mnu > ul > li a > img{
+        width: 40px;
+        height: 20px;
+        margin-left: 5px;
+    }
+    .rsnp-mnu > ul > li a > img:last-child{
+        position: absolute;
+        right: 0;
+        top: 8px;
+        opacity: 0;
+        -webkit-transition: all 0.5s ease-in-out;
+           -moz-transition: all 0.5s ease-in-out;
+                transition: all 0.5s ease-in-out;
+    }
+    .rsnp-mnu > ul > li:hover a > img:last-child{
+        opacity: 1;
+    }
+    .rsnp-mnu > ul > li > i{
+        float: left;
+        display: inline-block;
+        line-height: 30px;
+    }
+    .rsnp-mnu > ul ul{
+        padding: 0 20px;
+    }
+    .mega-menu{
+        width: auto;
+    }
+    .mega-menu > li{
+        width: 100%;
+    }
+    .scl1 > a{
+        margin: 0 5px;
+    }
+}
+
+@media(max-width:786px){
+    .rspn-cnt > span{
+        display: none;
+    }
+    .rspn-cnt > span:last-child{
+        display: inline-block;
+    }
 }

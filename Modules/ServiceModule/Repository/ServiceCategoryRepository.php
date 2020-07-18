@@ -23,9 +23,9 @@ class ServiceCategoryRepository
 
   public function save($data)
   {
-    
+
     $service = ServiceCategory::create($data);
-    
+
     return $service;
   }
 
@@ -33,13 +33,15 @@ class ServiceCategoryRepository
   {
     $categ = ServiceCategory::find($id);
 
+    $categ->update(['parent_id'=> $data['parent_id']]);
+
     foreach (\LanguageHelper::getLang() as $lang) {
 
-      
+
             if ($categ->hasTranslation('' . $lang->lang)) {
             }else {
                  $categ->translateOrNew('' . $lang->lang);
-                }
+            }
 
         if(isset($data[$lang->lang]['title'])) {
             $categ->translate('' . $lang->lang)->title = $data[$lang->lang]['title'];

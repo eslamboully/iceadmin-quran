@@ -75,12 +75,24 @@
                 <label class="col-md-4">@lang('servicemodule::service.cover_photo')</label>
                 <input class="col-md-4" type="file"  name="cover_photo" >
             </div>
+
+            <div class="form-group">
+                <label class="col-md-4">@lang('servicemodule::service.main_category')</label>
+                <div class="col-md-4">
+                    <select name="parent_id" class="form-control" id="">
+                        <option value="">Parent</option>
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->title }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
           <!-- /.nav-tabs-custom -->
-       
+
 
 <!-- seoooo -->
 
-        
+
         <div class="form-group">
                     <div class="box-header">
                         <pre><h4>SEO Columns : </h4></pre>

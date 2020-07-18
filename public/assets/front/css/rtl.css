@@ -256,3 +256,19 @@ nav > div ul ul li.menu-item-has-children > i {
   padding-left: 40px;
   padding-right: 50px;
 }
+
+.lg-mn .logo{
+    float: right;
+}
+.rspn-mnu-btn {
+    right: auto;
+    left: 20px;
+}
+.rsnp-mnu {
+    right: auto;
+    left: -350px;
+}
+.rsnp-mnu.slidein{
+    right: auto;
+    left: 0;
+}

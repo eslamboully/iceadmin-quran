@@ -32,7 +32,7 @@ return array(
    'yes'=>'Yes',
    'no'=>'No',
    'cover_photo' => 'cover photo',
-
+    'main_category' => 'parent category',
 
 
    #seo

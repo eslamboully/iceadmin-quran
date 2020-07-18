@@ -27,7 +27,7 @@ class FrontModuleController extends Controller
 {
     public function __construct()
     {
-        $categories = ServiceCategory::with(['translations','service'])->get();
+        $categories = ServiceCategory::with(['translations','service','categories'])->where('parent_id',null)->get();
         $blogs = Blog::with(['translations','admin'])->take(2)->get();
         View::share(['categories' => $categories,'blogs' => $blogs]);
     }
@@ -38,7 +38,7 @@ class FrontModuleController extends Controller
     public function index()
     {
         $sliders = Slider::with(['translations'])->get();
-        $our_ways = OurWay::with(['translations'])->take(4)->get();
+        $our_ways = OurWay::with(['translations'])->take(3)->get();
         $secondBlogs = Blog::with(['translations','admin'])->skip(2)->take(2)->get();
         $teams = Team::with(['translations'])->take(4)->get();
 
@@ -135,11 +135,36 @@ class FrontModuleController extends Controller
         return \response()->json(['data' => $contact,'message' => '','status' => true]);
     }
 
+    public function serviceCategory($id,$title)
+    {
+        $category = ServiceCategory::find($id);
+        return view('frontmodule::category',compact('category'));
+    }
+
     public function service($id,$title)
     {
         $service = Service::find($id);
         $services = Service::query()->get();
         $recent_blogs = Blog::with(['translations','admin'])->skip(2)->take(2)->get();
         return view('frontmodule::service',compact('service','services','recent_blogs'));
+    }
+
+    public function scientists()
+    {
+        $scientists = Team::all();
+        return view('frontmodule::scientists',compact('scientists'));
+    }
+
+    public function scholar($id,$title)
+    {
+        $scientist = Team::find($id);
+        $scientists = Team::all();
+        return view('frontmodule::scholar',compact('scientist'));
+    }
+
+    public function blog($id,$title)
+    {
+        $blog = Blog::find($id);
+        return view('frontmodule::blog',compact('blog'));
     }
 }

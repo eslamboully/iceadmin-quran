@@ -81,7 +81,7 @@
                              data-paddingright="[0,0,0,0]"
                              data-paddingbottom="[0,0,0,0]"
                              data-paddingleft="[0,0,0,0]"
-                             style="text-shadow: 0 3px 4px rgba(0,0,0,.19);font-family: lato;color: #fff;letter-spacing: 0;">{{ strip_tags($slider->description) }}
+                             style="text-shadow: 0 3px 4px rgba(0,0,0,.19);font-family: lato;color: #fff;letter-spacing: 0;">{{ strip_tags($slider->title) }}
                         </div>
 
                         <div class="tp-caption rev-btn theme-btn theme-bg brd   rd5" id="slide-layer-3"
@@ -125,7 +125,7 @@
                                     <h2 itemprop="headline">@lang('front.islam_center')</h2>
                                 </div>
                                 <p itemprop="description">{{ strip_tags($config['about']) }}</p>
-                                <a class="theme-btn theme-bg brd-rd5" href="#" title="" itemprop="url">@lang('front.read_more')</a>
+                                <a class="theme-btn theme-bg brd-rd5" href="{{ route('front.about_us') }}" title="" itemprop="url">@lang('front.read_more')</a>
                             </div>
                         </div>
                     </div>
@@ -135,48 +135,48 @@
     </section>
     <section>
         <div class="gap white-layer opc75">
-            <div class="fixed-bg" style="background-image: url({{ url('assets/front/images/parallax1.jpg') }});"></div>
+            <div class="fixed-bg" style="background-image: url({{ url('assets/front/images/pray-bg-1.jpg') }});"></div>
             <div class="container">
                 <div class="sec-tl text-center">
-                    <span class="theme-clr">عرض نماز</span>
-                    <h2 itemprop="headline">توقيت صلاة</h2>
+                    <span class="theme-clr">@lang('front.salah_time')</span>
+                    <h2 itemprop="headline">@lang('front.salah_tawkeet')</h2>
                 </div>
                 <div class="prayer-timing-wrp">
                     <div class="row">
                         <div class="col-md-5 col-sm-12 col-lg-5">
-                            <div class="timing-mockp"><img src="{{ url('') }}/assets/front/images/resources/prayer-time-mockp.png" alt="prayer-time-mockp.png" itemprop="image"></div>
+                            <div class="timing-mockp"><img src="{{ url('') }}/assets/front/images/pray-img-1.png" alt="prayer-time-mockp.png" itemprop="image"></div>
                         </div>
                         <div class="col-md-7 col-sm-12 col-lg-7">
                             <div class="timing-data">
                                 <div class="cntry-selc">
-                                    <div class="selec-wrp brd-rd5">
-                                        <select>
-                                            <option>حدد الدولة</option>
-                                            <option>الولايات المتحدة الأمريكية</option>
-                                            <option>الهند</option>
-                                            <option>باكستان</option>
-                                        </select>
-                                    </div>
-                                    <div class="selec-wrp brd-rd5">
-                                        <select>
-                                            <option>اختر مدينة</option>
-                                            <option>لاهور</option>
-                                            <option>مولتان</option>
-                                            <option>كراتشي</option>
-                                        </select>
-                                    </div>
+{{--                                    <div class="selec-wrp brd-rd5">--}}
+{{--                                        <select>--}}
+{{--                                            <option>حدد الدولة</option>--}}
+{{--                                            <option>الولايات المتحدة الأمريكية</option>--}}
+{{--                                            <option>الهند</option>--}}
+{{--                                            <option>باكستان</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="selec-wrp brd-rd5">--}}
+{{--                                        <select>--}}
+{{--                                            <option>اختر مدينة</option>--}}
+{{--                                            <option>لاهور</option>--}}
+{{--                                            <option>مولتان</option>--}}
+{{--                                            <option>كراتشي</option>--}}
+{{--                                        </select>--}}
+{{--                                    </div>--}}
                                 </div>
                                 <div class="prayer-timings text-center">
                                     <table>
-                                        <thead><tr><th><span>اسم الصلاة</span></th><th><span>وقت الأذان</span></th><th><span>صلاة الوقت</span></th></tr></thead>
+                                        <thead><tr><th><span>@lang('front.salah_name')</span></th><th><span>@lang('front.azan_time')</span></th><th><span>@lang('front.salah_wakt')</span></th></tr></thead>
                                         <tbody>
-                                        <tr><td><span>فجار</span></td><td>03:24 am</td><td>04:30 am</td></tr>
-                                        <tr><td><span>شروق الشمس</span></td><td>05:10 am</td><td>05:10 am</td></tr>
-                                        <tr><td><span>زوهار</span></td><td>12:15 pm</td><td>01:45 pm</td></tr>
-                                        <tr><td><span>اسار</span></td><td>05:10 pm</td><td>05:30 pm</td></tr>
-                                        <tr><td><span>المغرب</span></td><td>07:15 pm</td><td>07:20 pm</td></tr>
-                                        <tr><td><span>العشاء</span></td><td>09:05 pm</td><td>09:25 pm</td></tr>
-                                        <tr><td><span>جمعة</span></td><td>01:00 pm</td><td>02:00 pm</td></tr>
+                                        <tr><td><span>@lang('front.fagr')</span></td><td>{{ $config['fagr'] }}</td><td>{{ $config['time_fagr'] }}</td></tr>
+                                        <tr><td><span>@lang('front.shorok')</span></td><td>{{ $config['elShoroq'] }}</td><td>{{ $config['time_elShoroq'] }}</td></tr>
+                                        <tr><td><span>@lang('front.dohr')</span></td><td>{{ $config['elzohr'] }}</td><td>{{ $config['time_elzohr'] }}</td></tr>
+                                        <tr><td><span>@lang('front.3asr')</span></td><td>{{ $config['elassr'] }}</td><td>{{ $config['time_elassr'] }}</td></tr>
+                                        <tr><td><span>@lang('front.magreb')</span></td><td>{{ $config['elmogreb'] }}</td><td>{{ $config['time_elmogreb'] }}</td></tr>
+                                        <tr><td><span>@lang('front.eisha')</span></td><td>{{ $config['eleshaa'] }}</td><td>{{ $config['time_eleshaa'] }}</td></tr>
+                                        <tr><td><span>@lang('front.gomaa')</span></td><td>{{ $config['elgomaa'] }}</td><td>{{ $config['time_elgomaa'] }}</td></tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -198,15 +198,15 @@
                     <div class="row">
                         @php $ourWaysArr = ['open-book','grave','mosque','begging'] @endphp
                         @foreach($our_ways as $index=>$my_ways)
-                            <div class="col-md-3 col-sm-6 col-lg-3">
-                            <div class="serv-bx text-center">
-                                <i class="flaticon-{{ $ourWaysArr[$index] }} theme-clr"></i>
-                                <h5 itemprop="headline"><a href="" title="" itemprop="url">{{ $my_ways->title }}</a></h5>
-                                <div class="srv-inf theme-bg brd-rd10">
-                                    <p itemprop="description">{{ \Illuminate\Support\Str::limit(strip_tags($my_ways->content),40) }}</p>
+                            <div class="col-md-4 col-sm-6 col-lg-4">
+                                <div class="serv-bx text-center">
+                                    <i class="flaticon-{{ $ourWaysArr[$index] }} theme-clr"></i>
+                                    <h5 itemprop="headline"><a href="" title="" itemprop="url">{{ $my_ways->title }}</a></h5>
+                                    <div class="srv-inf theme-bg brd-rd10">
+                                        <p itemprop="description">{{ \Illuminate\Support\Str::limit(strip_tags($my_ways->content),70) }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div><!-- Services Wrap -->
@@ -218,7 +218,7 @@
     </section>
     <section>
         <div class="gap black-layer opc75">
-            <div class="fixed-bg" style="background-image: url({{ url('assets/front/images/parallax2.jpg') }});"></div>
+            <div class="fixed-bg" style="background-image: url({{ url('assets/front/images/blog.jpg') }});"></div>
             <div class="container">
                 <div class="sec-tl text-center">
 {{--                    <span class="theme-clr">حول اساسي</span>--}}
@@ -278,15 +278,15 @@
                         <div class="col-md-7 col-sm-12 col-lg-7">
                             @foreach($blogs as $blog)
                                 <div class="post-bx lst brd-rd5">
-                                <div class="post-thmb"><a href="" title="" itemprop="url"><img src="{{ url('images/blog/'.$blog->photo) }}" style="width: 300px;height: 216px" alt="post-img1-1.jpg" itemprop="image"></a></div>
+                                <div class="post-thmb"><a href="{{ route('front.blog',['id'=> $blog->id,'title' => str_replace(' ','-',$blog->title)]) }}" title="" itemprop="url"><img src="{{ url('images/blog/'.$blog->photo) }}" style="width: 300px;height: 216px" alt="post-img1-1.jpg" itemprop="image"></a></div>
                                 <div class="post-inf">
-                                    <h5 itemprop="headline"><a href="" title="" itemprop="url">{{ $blog->title }}</a></h5>
+                                    <h5 itemprop="headline"><a href="{{ route('front.blog',['id'=> $blog->id,'title' => str_replace(' ','-',$blog->title)]) }}" title="" itemprop="url">{{ $blog->title }}</a></h5>
                                     <ul class="pst-mta">
                                         <li><i class="far fa-calendar-alt theme-clr"></i>{{ $blog->created_at->diffForHumans() }}</li>
                                         <li><i class="far fa-user theme-clr"></i><a href="#" title="" itemprop="url">{{ $blog->admin->name }}</a></li>
                                     </ul>
                                     <p itemprop="description">{!! strip_tags($blog->description) !!}</p>
-                                    <a href="" title="" itemprop="url">@lang('front.read_more')</a>
+                                    <a href="{{ route('front.blog',['id'=> $blog->id,'title' => str_replace(' ','-',$blog->title)]) }}" title="" itemprop="url">@lang('front.read_more')</a>
                                 </div>
                             </div>
                             @endforeach
@@ -373,16 +373,16 @@
                         @foreach($teams as $team)
                         <div class="col-md-4 col-sm-6 col-lg-4">
                             <div class="team-bx text-center">
-                                <div class="team-thmb brd-rd5"><a href="" title="" itemprop="url"><img src="{{ url('images/team/'.$team->photo) }}" style="width: 350px;height: 484px" alt="team-img1-1.jpg" itemprop="image"></a></div>
+                                <div class="team-thmb brd-rd5"><a href="" title="{{ route('front.scholar',['id' => $team->id,'title' => str_replace(' ','-',$team->name)]) }}" itemprop="url"><img src="{{ url('images/team/'.$team->photo) }}" style="width: 350px;height: 484px" alt="team-img1-1.jpg" itemprop="image"></a></div>
                                 <div class="team-inf brd-rd5">
                                     <div class="scl1">
-                                        <a href="{{ $team->twitter }}" title="Twitter" itemprop="url" target="_blank"><i class="fab fa-twitter"></i></a>
-                                        <a href="{{ $team->facebook }}" title="Facebook" itemprop="url" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="{{ $team->instagram }}" title="Instagram" itemprop="url" target="_blank"><i class="fab fa-instagram"></i></a>
-                                        <a href="{{ $team->youtube }}" title="Youtube" itemprop="url" target="_blank"><i class="fab fa-youtube"></i></a>
-                                        <a href="{{ $team->skype }}" title="skype" itemprop="url" target="_blank"><i class="fab fa-skype"></i></a>
+{{--                                        <a href="{{ $team->twitter }}" title="Twitter" itemprop="url" target="_blank"><i class="fab fa-twitter"></i></a>--}}
+{{--                                        <a href="{{ $team->facebook }}" title="Facebook" itemprop="url" target="_blank"><i class="fab fa-facebook-f"></i></a>--}}
+{{--                                        <a href="{{ $team->instagram }}" title="Instagram" itemprop="url" target="_blank"><i class="fab fa-instagram"></i></a>--}}
+{{--                                        <a href="{{ $team->youtube }}" title="Youtube" itemprop="url" target="_blank"><i class="fab fa-youtube"></i></a>--}}
+{{--                                        <a href="{{ $team->skype }}" title="skype" itemprop="url" target="_blank"><i class="fab fa-skype"></i></a>--}}
                                     </div>
-                                    <h5 itemprop="headline"><a href="" title="" itemprop="url">{{ $team->name }}</a></h5>
+                                    <h5 itemprop="headline"><a href="{{ route('front.scholar',['id' => $team->id,'title' => str_replace(' ','-',$team->name)]) }}" title="" itemprop="url">{{ $team->name }}</a></h5>
                                     <span>{{ $team->job_title }}</span>
                                 </div>
                             </div>
@@ -391,7 +391,7 @@
                     </div>
                 </div><!-- Team Sec -->
                 <div class="view-more text-center">
-                    <a class="theme-btn theme-bg brd-rd5" href="" title="" itemprop="url">@lang('front.read_more')</a>
+                    <a class="theme-btn theme-bg brd-rd5" href="{{ route('front.scientists') }}" title="" itemprop="url">@lang('front.read_more')</a>
                 </div><!-- عرض المزيد -->
             </div>
         </div>

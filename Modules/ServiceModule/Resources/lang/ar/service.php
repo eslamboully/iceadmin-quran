@@ -32,7 +32,7 @@ return array(
    'yes'=>'نعم',
    'no'=>'لا',
    'cover_photo' => 'صورة الغلاف',
-
+   'main_category' => 'القسم الرئيسي',
     #seo
     'md' => 'Meta Description',
     'mt' => 'Meta Title',

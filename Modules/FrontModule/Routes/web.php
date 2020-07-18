@@ -14,6 +14,12 @@ Route::group(
     Route::get('/question/{id}/{title?}', 'FrontModuleController@question')->name('front.question');
     Route::get('/shares', 'FrontModuleController@shares')->name('front.shares');
     Route::get('/share/{id}/{title?}', 'FrontModuleController@share')->name('front.share');
+    Route::get('/service-category/{id}/{title?}', 'FrontModuleController@serviceCategory')->name('front.service.category');
     Route::get('/service/{id}/{title?}', 'FrontModuleController@service')->name('front.service');
+    // teams => scientists
+    Route::get('/scholars', 'FrontModuleController@scientists')->name('front.scientists');
+    Route::get('/scholar/{id}/{title?}', 'FrontModuleController@scholar')->name('front.scholar');
+
+    Route::get('/blog/{id}/{title?}', 'FrontModuleController@blog')->name('front.blog');
 
 });

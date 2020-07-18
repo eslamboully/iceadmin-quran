@@ -10,6 +10,7 @@
                         <h1 itemprop="headline">{{ $service->title }}</h1>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="" title="" itemprop="url">@lang('front.home')</a></li>
+                            <li class="breadcrumb-item "><a href="{{ route('front.service.category',['id' => $service->service_category->id,'title' => str_replace(' ','-',$service->service_category->title)]) }}" title="" itemprop="url">{{ $service->service_category->title }}</a></li>
                             <li class="breadcrumb-item active">{{ $service->title }}</li>
                         </ol>
                     </div>

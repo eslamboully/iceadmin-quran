@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <title>بسم الله</title>
+    <title>ابواب القران | الرئيسية</title>
 
     <link rel="stylesheet" href="{{ url('') }}/assets/front/css/icons.min.css">
     <link rel="stylesheet" href="{{ url('') }}/assets/front/css/bootstrap.min.css">
@@ -108,17 +108,28 @@
                         <ul>
                             @foreach($categories as $category)
                                     <li class="menu-item-has-children">
-                                        <a href="#" title="" itemprop="url">
+                                        <a href="{{ route('front.service.category',['id' => $category->id,'title' => str_replace(' ','-',$category->title)]) }}" title="" itemprop="url">
                                             <img src="{{ url('images/service/'.$category->photo) }}" alt="...">
+                                            <img src="{{ url('images/service/'.$category->cover_photo) }}" alt="...">
                                             {{ $category->title }}
                                         </a>
                                         <i class="fas fa-angle-down"></i>
-                                        <ul>
-                                            @foreach($category->service()->get() as $service)
-                                            <li>
-                                                <a href="{{ route('front.service',['id' => $service->id,'title' => str_replace(' ','-',$service->title)]) }}" title="" itemprop="url">
-                                                    {{ $service->title }}
+                                        <ul class="{{ count($category->categories) > 6 ? 'mega-menu' : '' }}">
+                                            @foreach($category->categories as $cat)
+                                            <li class="{{ count($cat->categories) > 0 ? 'menu-item-has-children' : '' }}">
+                                                <a href="{{ route('front.service.category',['id' => $cat->id,'title' => str_replace(' ','-',$cat->title)]) }}" title="" itemprop="url">
+                                                    {{ $cat->title }}
                                                 </a>
+                                                @if(count($cat->categories) > 0) <i class="fas fa-angle-right"></i> @endif
+                                                <ul>
+                                                    @foreach($cat->categories as $cota)
+                                                        <li>
+                                                            <a href="{{ route('front.service.category',['id' => $cota->id,'title' => str_replace(' ','-',$cota->title)]) }}" title="" itemprop="url">
+                                                                {{ $cota->title }}
+                                                            </a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
                                             </li>
                                             @endforeach
                                         </ul>
@@ -126,36 +137,41 @@
                             @endforeach
                             <li>
                                 <a href="{{ route('front.religious_link') }}" title="" itemprop="url">
-                                    <img src="{{ url('assets/front/images/icons/4.png') }}" alt="...">
+                                    <img src="{{ url('assets/front/images/icons/04.png') }}" alt="...">
+                                    <img src="{{ url('assets/front/images/icons/04_hover.png') }}" alt="...">
                                     @lang('front.relegion_link')
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('front.shares') }}" title="" itemprop="url">
                                     <img src="{{ url('assets/front/images/icons/03.png') }}" alt="...">
+                                    <img src="{{ url('assets/front/images/icons/03_hover.png') }}" alt="...">
                                     @lang('front.your_share')
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('front.questions') }}" title="" itemprop="url">
-                                    <img src="{{ url('assets/front/images/icons/01.png') }}" alt="...">
+                                    <img src="{{ url('assets/front/images/icons/02.png') }}" alt="...">
+                                    <img src="{{ url('assets/front/images/icons/02_hover.png') }}" alt="...">
                                     @lang('front.questions')
                                 </a>
                             </li>
 
-                            <li>
-                                <a href="{{ route('front.about_us') }}" title="" itemprop="url">
-                                    <img src="{{ url('assets/front/images/icons/05.png') }}" alt="...">
-                                    @lang('front.about_us')
-                                </a>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a href="{{ route('front.about_us') }}" title="" itemprop="url">--}}
+{{--                                    <img src="{{ url('assets/front/images/icons/05.png') }}" alt="...">--}}
+{{--                                    <img src="{{ url('assets/front/images/icons/05_hover.png') }}" alt="...">--}}
+{{--                                    @lang('front.about_us')--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
 
-                            <li>
-                                <a href="{{ route('front.contact') }}" title="" itemprop="url">
-                                    <img src="{{ url('assets/front/images/icons/06.png') }}" alt="...">
-                                    @lang('front.contact')
-                                </a>
-                            </li>
+{{--                            <li>--}}
+{{--                                <a href="{{ route('front.contact') }}" title="" itemprop="url">--}}
+{{--                                    <img src="{{ url('assets/front/images/icons/06.png') }}" alt="...">--}}
+{{--                                    <img src="{{ url('assets/front/images/icons/06_hover.png') }}" alt="...">--}}
+{{--                                    @lang('front.contact')--}}
+{{--                                </a>--}}
+{{--                            </li>--}}
                         </ul>
                         <a class="srch-btn" href="#" title="" itemprop="url">
                             <i class="fas fa-search"></i>
@@ -237,16 +253,28 @@
                 </li>
                 @foreach($categories as $category)
                     <li class="menu-item-has-children">
-                        <a href="#" title="" itemprop="url">
-{{--                            <img src="{{ url('images/service/'.$category->photo) }}" alt="...">--}}
+                        <a href="" title="" itemprop="url">
+                            <img src="{{ url('images/service/'.$category->photo) }}" alt="...">
+                            <img src="{{ url('images/service/'.$category->photo) }}" alt="...">
                             {{ $category->title }}
                         </a>
+                        <i class="fas fa-angle-down"></i>
                         <ul>
-                            @foreach($category->service()->get() as $service)
-                                <li>
-                                    <a href="{{ route('front.service',['id' => $service->id,'title' => str_replace(' ','-',$service->title)]) }}" title="" itemprop="url">
-                                        {{ $service->title }}
+                            @foreach($category->categories as $cat)
+                                <li class="{{ count($cat->categories) > 0 ? 'menu-item-has-children' : '' }}">
+                                    <a href="{{ route('front.service.category',['id' => $cat->id,'title' => str_replace(' ','-',$cat->title)]) }}" title="" itemprop="url">
+                                        {{ $cat->title }}
                                     </a>
+                                    @if(count($cat->categories) > 0) <i class="fas fa-angle-right"></i> @endif
+                                    <ul>
+                                        @foreach($cat->categories as $cota)
+                                            <li>
+                                                <a href="{{ route('front.service.category',['id' => $cat->id,'title' => str_replace(' ','-',$cat->title)]) }}" title="" itemprop="url">
+                                                    {{ $cota->title }}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    </ul>
                                 </li>
                             @endforeach
                         </ul>
@@ -257,16 +285,16 @@
                         @lang('front.relegion_link')
                     </a>
                 </li>
-                <li>
-                    <a href="{{ route('front.shares') }}" title="" itemprop="url">
-                        @lang('front.your_share')
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('front.questions') }}" title="" itemprop="url">
-                        @lang('front.questions')
-                    </a>
-                </li>
+{{--                <li>--}}
+{{--                    <a href="{{ route('front.shares') }}" title="" itemprop="url">--}}
+{{--                        @lang('front.your_share')--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+{{--                <li>--}}
+{{--                    <a href="{{ route('front.questions') }}" title="" itemprop="url">--}}
+{{--                        @lang('front.questions')--}}
+{{--                    </a>--}}
+{{--                </li>--}}
             </ul>
         </div><!-- Responsive Menu -->
     </div><!-- Responsive Header -->
@@ -282,7 +310,7 @@
                             <div class="col-md-3 col-sm-6 col-lg-3">
                                 <div class="widget">
                                     <h5 itemprop="headline">@lang('front.info_about')</h5>
-                                    <p itemprop="description">{{ \Illuminate\Support\Str::limit(strip_tags($config['about']),100) }}</p>
+                                    <p itemprop="description">{{ \Illuminate\Support\Str::limit(strip_tags($config['about']),250) }}</p>
 {{--                                    <div class="loc-mp brd-rd5" id="loc-mp"></div>--}}
 {{--                                    <span><i class="fas fa-map-marker-alt theme-clr"></i>تجدنا على الخريطة</span>--}}
                                 </div>
@@ -293,9 +321,9 @@
                                     <div class="rcnt-wrp">
                                         @foreach($blogs as $blog)
                                             <div class="rcnt-bx">
-                                            <a class="brd-rd5" href="" title="" itemprop="url"><img src="{{ url('images/blog/'.$blog->photo) }}" style="width: 68px;height: 66px" alt="rcnt-img1.jpg" itemprop="image"></a>
+                                            <a class="brd-rd5" href="{{ route('front.blog',['id'=> $blog->id,'title' => str_replace(' ','-',$blog->title)]) }}" title="" itemprop="url"><img src="{{ url('images/blog/'.$blog->photo) }}" style="width: 68px;height: 66px" alt="rcnt-img1.jpg" itemprop="image"></a>
                                             <div class="rcnt-inf">
-                                                <h6 itemprop="headline"><a href="" title="" itemprop="url">{{ $blog->title }}</a></h6>
+                                                <h6 itemprop="headline"><a href="{{ route('front.blog',['id'=> $blog->id,'title' => str_replace(' ','-',$blog->title)]) }}" title="" itemprop="url">{{ $blog->title }}</a></h6>
                                                 <span class="theme-clr"><i class="far fa-calendar-alt"></i>{{ $blog->created_at->format('Y-M-d') }}</span>
                                             </div>
                                         </div>

@@ -16,6 +16,7 @@ class FrontModuleDatabaseSeeder extends Seeder
     {
         Model::unguard();
 
-        // $this->call("OthersTableSeeder");
+        $this->call(SalahTableSeeder::class);
+        $this->call(TimeTableSeeder::class);
     }
 }

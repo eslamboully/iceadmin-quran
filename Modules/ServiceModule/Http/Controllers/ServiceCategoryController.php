@@ -22,7 +22,7 @@ class ServiceCategoryController extends Controller
         $this->serviceCategRepo = $serviceCategRepo;
     }
 
-   
+
     public function index()
     {
         $categories = $this->serviceCategRepo->findAll();
@@ -58,13 +58,14 @@ class ServiceCategoryController extends Controller
             ->make(true);
     }
 
-   
+
     public function create()
     {
-        return view('servicemodule::ServiceCategory.create');
+        $categories = ServiceCategory::with(['translations'])->get();
+        return view('servicemodule::ServiceCategory.create',compact('categories'));
     }
 
-   
+
     public function store(Request $request)
     {
 
@@ -82,24 +83,24 @@ class ServiceCategoryController extends Controller
             $categData['cover_photo'] = $imageName;
         }
 
-        
+
 
         $this->serviceCategRepo->save($categData);
 
         return redirect('admin-panel/servicemodule/category')->with('success', 'success');
     }
 
-   
+
     public function edit($id)
     {
         $category = $this->serviceCategRepo->find($id);
-
-        return view('servicemodule::ServiceCategory.edit', ['category' => $category]);
+        $cats = ServiceCategory::with(['translations'])->get();
+        return view('servicemodule::ServiceCategory.edit', ['category' => $category,'cats' => $cats]);
     }
     public function update(Request $request, $id)
     {
         $data = $request->except('_token', '_method');
-        
+
         $this->serviceCategRepo->update($id, $data);
 
         if ($request->hasFile('photo')){
@@ -119,7 +120,7 @@ class ServiceCategoryController extends Controller
         return redirect('admin-panel/servicemodule/category')->with('updated', 'updated');
     }
 
-   
+
     public function destroy($id)
     {
         $categ = $this->serviceCategRepo->find($id);

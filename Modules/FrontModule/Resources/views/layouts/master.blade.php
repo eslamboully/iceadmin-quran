@@ -226,7 +226,7 @@
         <div class="lg-mn">
             <div class="logo">
                 <a href="{{ route('front.index') }}" title="Logo" itemprop="url">
-                    <img src="{{ url('images/config/'.$config['logo']) }}" alt="logo2.png" itemprop="image">
+                    <img src="{{ url('assets/front/images/logo.png') }}" alt="logo2.png" itemprop="image">
                 </a>
             </div>
             <div class="rspn-cnt">
@@ -249,7 +249,7 @@
                     </span>
             <ul>
                 <li>
-                    <a href="#" title="" itemprop="url">@lang('front.home')</a>
+                    <a href="{{ route('front.index') }}" title="" itemprop="url">@lang('front.home')</a>
                 </li>
                 @foreach($categories as $category)
                     <li class="menu-item-has-children">
@@ -259,7 +259,7 @@
                             {{ $category->title }}
                         </a>
                         <i class="fas fa-angle-down"></i>
-                        <ul>
+                        <ul style="height: 250px;overflow: scroll">
                             @foreach($category->categories as $cat)
                                 <li class="{{ count($cat->categories) > 0 ? 'menu-item-has-children' : '' }}">
                                     <a href="{{ route('front.service.category',['id' => $cat->id,'title' => str_replace(' ','-',$cat->title)]) }}" title="" itemprop="url">
@@ -285,16 +285,16 @@
                         @lang('front.relegion_link')
                     </a>
                 </li>
-{{--                <li>--}}
-{{--                    <a href="{{ route('front.shares') }}" title="" itemprop="url">--}}
-{{--                        @lang('front.your_share')--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="{{ route('front.questions') }}" title="" itemprop="url">--}}
-{{--                        @lang('front.questions')--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+                <li>
+                    <a href="{{ route('front.shares') }}" title="" itemprop="url">
+                        @lang('front.your_share')
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('front.questions') }}" title="" itemprop="url">
+                        @lang('front.questions')
+                    </a>
+                </li>
             </ul>
         </div><!-- Responsive Menu -->
     </div><!-- Responsive Header -->
